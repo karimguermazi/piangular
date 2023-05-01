@@ -1,0 +1,55 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Add Transaction</h4>
+                    </div>
+                    <div class="content">
+                        <form  *ngIf="!isSuccessful"
+                        name="form" 
+                        (ngSubmit)="f.form.valid && onSubmit()"
+                        #f="ngForm"
+                         >
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Id Compte Reciver</label>
+                                        <input  [(ngModel)]="form.idCompteReciver" type="number" class="form-control" placeholder="Id Compte Reciver" >
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Id Compte Sender</label>
+                                        <input  [(ngModel)]="form.idCompteSender" type="number" class="form-control" placeholder="Id Compte Sender">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Amount</label>
+                                        <input  [(ngModel)]="form.amount" type="number" class="form-control" placeholder="Amount" value="Mike">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Transaction Type</label>
+                                        <input  [(ngModel)]="form.type_transaction" type="text" class="form-control" placeholder="Transaction Type" >
+                                        <!-- <cdk-virtual-scroll-viewport itemSize="3" >
+                                            <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+                                          </cdk-virtual-scroll-viewport> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-fill pull-right">Add Transaction</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
